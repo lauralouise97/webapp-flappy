@@ -1,5 +1,47 @@
-// the Game object used by the phaser.io library
-var stateActions = { preload: preload, create: create, update: update };
+/* Global Variables & Constants */
+
+// the jump velocity of the player - the larger the number the higher it jumps
+var jump_height = 200;
+// the initial height of the player
+var initial_height = 270;
+// the right margin of the player
+var player_margin = 60;
+// indicates whether the game is waiting for the player to fall after a pipe was hit
+var player_falling = false;
+
+// the height of pipe sprites
+var pipe_size = 50;
+// the height of end bit of pipe
+var pipe_end_size = 12;
+// the horizontal offset at which pipes are spawned
+var pipe_offset = 900;
+// the interval (in seconds) at which new pipe columns are spawned
+var pipe_interval = 1.75;
+// the number of pipe sprites that make up a pipe column
+var number_of_pipes = 8;
+// the bigger the number the quicker the player falls
+var gravity = 400;
+
+// the height of the game scene
+var game_height = (pipe_size * number_of_pipes) + (2 * pipe_end_size);
+// the width of the game scene
+var game_width = 750;
+// the horizontal speed in pixels at which pipes move per second
+var game_speed = 200;
+// a boolean indicating whether the game is on start screen
+var game_startscreen = true;
+// a boolean indicating whether the game is running or not
+var game_playing = false;
+
+// stores the current score
+var score = 0;
+// the frequency of score updates per second
+var score_update_freq = 0.1;
+// time it takes to pass through the first pipe
+var time_offset = (pipe_size + pipe_offset - player_margin)/game_speed;
+// keep track of game play time for scoring
+var pipe_timer = -time_offset;
+
 
 var game = new Phaser.Game(790, 400, Phaser.AUTO, 'game', stateActions);
 var score = 0;

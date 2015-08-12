@@ -12,17 +12,17 @@ app.get("/", function(request, response){
 });
 
 app.post('/score', function(request, response){
-    var name = request.body.fullName;
-    var email = request.body.email;
-    var score = request.body.score;
+    var name = request.body.fullName;   
+    var email = request.body.email;         
+    var score = request.body.score;         
 
-    var database = csv.createCsvFileWriter("scores.csv", {"flags": "a"});
-    var data = [name, email, score];
+    var database = csv.createCsvFileWriter("scores.csv", {"flags": "a"}); 
+    var data = [name, email, score];   
 
-    database.writeRecord(data);
-    database.writeStream.end();
+    database.writeRecord(data);             
+    database.writeStream.end();             
 
-    response.send("Thanks " + name + ", your score has been recorded!");
+    response.send("Thanks " + name + ", your score has been recorded!"); 
 });
 
 app.get("/score", function(request, response) {
