@@ -1,0 +1,34 @@
+h1 {text-align: center;
+    color: black;
+    font-size: 80px;
+    font-family: "reprise script", "cursive";}
+
+p {text-align: center;
+   font-size: 30px;
+    font-family: "reprise script", "cursive";}
+
+div {font-family: "reprise script", "cursive";}
+
+#greeting {
+    position: absolute;
+    left: 64%;
+    top: 33.75%;
+    background: #ffdfe3;
+    width: 335px;
+    height: 200px;
+    border: 0px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#hscore {
+    position: absolute;
+    left: 64%;
+    top: 56%;
+    background: #ffdfe3;
+    width: 335px;
+    height: 194px;
+    border: 0px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+}
