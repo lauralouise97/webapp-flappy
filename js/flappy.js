@@ -46,6 +46,7 @@ jQuery("#greeting-form").on("submit", function(event_details) {
     game.state.restart();
 
     $("#greeting").show();
+    
 });
 
 function preload() {
