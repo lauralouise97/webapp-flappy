@@ -1,4 +1,5 @@
 /* Global Variables & Constants */
+var stateActions = { preload: preload, create: create, update: update };
 
 // the jump velocity of the player - the larger the number the higher it jumps
 var jump_height = 200;
